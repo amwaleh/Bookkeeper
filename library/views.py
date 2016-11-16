@@ -1,8 +1,10 @@
 from django.core.urlresolvers import reverse
 from django.views.generic.list import ListView
 from django.views.generic import TemplateView
+from django.shortcuts import redirect
 from .form import SearchForm
 from .models import Books
+
 
 
 class Search(object):
@@ -31,7 +33,7 @@ class SearchView(Search, ListView):
         search = self.request.GET.get('search')
         filter = self.request.GET.get('filter')
         if not search:
-            return reverse('library:index')
+            return redirect(reverse('library:index'))
 
         if filter == 'category':
             context = Books.objects.filter(category__name__iexact=search)
