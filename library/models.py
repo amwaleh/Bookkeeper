@@ -1,5 +1,5 @@
 from django.db import models
-
+from django.core.urlresolvers import reverse
 
 
 class Timemixin(models.Model):
@@ -23,6 +23,11 @@ class Books(Timemixin):
     '''
     title = models.CharField(max_length=32)
     category = models.ForeignKey(Categories,on_delete=models.CASCADE)
+
+    def get_absolute_url(self):
+        return reverse('library:index')
+
+
 
 
 
