@@ -27,6 +27,9 @@ class Books(Timemixin):
     def get_absolute_url(self):
         return reverse('library:index')
 
+    def __str__(self):
+        return "{}".format(self.title)
+
 
 
 

@@ -16,7 +16,7 @@ class TestViews(TestCase):
         res = self.client.get(reverse('library:search'))
         self.assertEquals(res.status_code, 200)
 
-    def test_search_route(self):
+    def test_search_route_with_title(self):
         data = {'search': 'e', 'category': 'title'}
         res = self.client.get(reverse('library:search'), data=data)
         self.assertEquals(res.status_code, 200)
@@ -40,13 +40,3 @@ class TestViews(TestCase):
         res = self.client.get(reverse('library:search'), data=data)
         self.assertEquals(res.status_code, 200)
         self.assertNotContains(res, 'mothers')
-
-    def test_add_Books_view(self):
-        data = {
-            'title': 'sample book',
-            'category_id': 1
-        }
-        res = self.client.get(reverse('library:book'), data=data)
-        path=res.request.get('PATH_INFO')
-        self.assertEquals(res.status_code,200)
-        self.assertEquals(path, reverse('library:book'))

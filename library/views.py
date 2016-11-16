@@ -1,4 +1,4 @@
-from django.views.generic.edit import CreateView
+from django.core.urlresolvers import reverse
 from django.views.generic.list import ListView
 from django.views.generic import TemplateView
 from .form import SearchForm
@@ -19,12 +19,6 @@ class HomeView(Search, TemplateView):
     template_name = 'index.html'
 
 
-class Addbooks(Search, CreateView):
-    model = Books
-    fields = '__all__'
-    template_name = 'index.html'
-
-
 class SearchView(Search, ListView):
     '''
     performs search
@@ -36,8 +30,12 @@ class SearchView(Search, ListView):
     def get_queryset(self):
         search = self.request.GET.get('search')
         filter = self.request.GET.get('filter')
+        if not search:
+            return reverse('library:index')
+
         if filter == 'category':
             context = Books.objects.filter(category__name__iexact=search)
         else:
             context = Books.objects.filter(title__contains=search)
+
         return context
