@@ -11,7 +11,7 @@
 </head>
 <body>
 <div style="background-color:#333;padding:30px">
-        <ul class="nav nav-pills  style="background-color:#333">
+        <ul class="nav nav-pills  >
 			<li class="nav-item">
 				<a href="#" class="nav-link active"> Book Keeper</a>
 			</li>
@@ -22,9 +22,13 @@
 <div class="jumbotron">
 <form action="{% url 'library:search' %}">
 	{% csrf_token %}
-	{% bootstrap_form search_form %}
 
-    {% bootstrap_button button_type="submit" content="search" button_class="pull-right primary" icon="search" %}
+    {% for field in search_form  %}
+        {% bootstrap_field field field_class="col-md-4 " layout="inline" %}
+
+    {% endfor %}
+
+    {% bootstrap_button button_type="submit" content="search" button_class=" success" icon="search" %}
 </form>
 	
 </div>

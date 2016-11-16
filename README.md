@@ -1,7 +1,6 @@
 # Bookkeeper
 
 [![Build Status](https://travis-ci.org/andela-amwaleh/Bookkeeper.svg?branch=develop)](https://travis-ci.org/andela-amwaleh/Bookkeeper)
-
 [![Coverage Status](https://coveralls.io/repos/github/andela-amwaleh/Bookkeeper/badge.svg?branch=develop)](https://coveralls.io/github/andela-amwaleh/Bookkeeper?branch=develop)
 
 

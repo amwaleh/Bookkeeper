@@ -10,16 +10,18 @@
 {% if form %}
     <form action="" method="post">
     {% csrf_token %}
-    {% bootstrap_form form %}
-    {% bootstrap_button button_type="submit" content="add" button_class="pull-right primary" icon="search" %}
+    {% for field in search_form  %}
+        {% bootstrap_field field field_class="col-md-4 " layout="inline" %}
+    {% endfor%}
+    {% bootstrap_button button_type="submit" content="add" button_class="btn btn-lg  succes" icon="add" %}
     </form>
 
   {% else %}
 
-    <div class="col-lg-8 ">
+    <div class="col-lg-8 panel panel-primary off">
         <h2>results</h2>
-    <div class="col-lg-6 offset-lg-3">
-    <table class="table table-stripped">
+    <div class=" ">
+    <table class="table table-striped">
     	<thead>
     		<tr>
     			<th>Title </th>
