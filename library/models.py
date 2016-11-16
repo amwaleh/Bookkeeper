@@ -9,9 +9,9 @@ class Timemixin(models.Model):
 
 class Categories(Timemixin):
     '''
-    Handles the Categories
+        Handles the categories
     '''
-    name = models.CharField(max_length=32)
+    name = models.CharField(max_length=32, unique=True)
 
     def __str__(self):
         return "{}".format(self.name)
@@ -21,7 +21,7 @@ class Books(Timemixin):
     '''
         Handles Books Data
     '''
-    title = models.CharField(max_length=32)
+    title = models.CharField(max_length=32, unique=True)
     category = models.ForeignKey(Categories,on_delete=models.CASCADE)
 
     def get_absolute_url(self):

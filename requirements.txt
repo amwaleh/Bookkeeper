@@ -1,0 +1,7 @@
+coverage==4.0.3
+Django==1.10.3
+django-bootstrap3==7.1.0
+python-coveralls==2.9.0
+PyYAML==3.12
+requests==2.12.1
+six==1.10.0

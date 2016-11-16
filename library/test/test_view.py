@@ -41,3 +41,13 @@ class TestViews(TestCase):
         self.assertEquals(res.status_code, 200)
         self.assertNotContains(res, 'mothers')
 
+    def test_add_Books_view(self):
+        data = {
+            'title':'sample book',
+            'category_id':1
+        }
+        res = self.client.get(reverse('library:book'), data=data)
+
+        self.assertEquals
+
+

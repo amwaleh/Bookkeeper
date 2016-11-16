@@ -9,8 +9,5 @@ script:
 branches:
   only:
   - develop
-env:
-  global:
-    - TRAVIS_BUILD=true
-after_success:
-    - coveralls
+
+after_success: coveralls

@@ -1,26 +1,24 @@
 {% extends 'partials/base.html' %}
 {% load bootstrap3 %}
 {% block content %}
-
 <div class="container">
 
-<H1> welcome to the book store </H1>
+<H1> </H1>
 	
 </div>
 
-
 {% if form %}
-
-
     <form action="" method="post">
     {% csrf_token %}
     {% bootstrap_form form %}
     {% bootstrap_button button_type="submit" content="add" button_class="pull-right primary" icon="search" %}
     </form>
-  {% else %}
-        <h2>results</h2>
 
-    <div class="col-lg-6">
+  {% else %}
+
+    <div class="col-lg-8 ">
+        <h2>results</h2>
+    <div class="col-lg-6 offset-lg-3">
     <table class="table table-stripped">
     	<thead>
     		<tr>
@@ -31,13 +29,14 @@
     	<tbody>
         {% for item in results %}
     		<tr>
-    			<td>{{ item.title }}</td>
+    			<td>{% bootstrap_icon "book" %} {{ item.title }}</td>
     			<td>{{ item.category }}</td>
     		</tr>
         {% endfor %}
     	</tbody>
     </table>
 
+    </div>
     </div>
 {% endif %}
 {% endblock content  %}
