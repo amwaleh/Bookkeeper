@@ -1,5 +1,6 @@
 # Bookkeeper
 
+[![Build Status](https://travis-ci.org/andela-amwaleh/Bookkeeper.svg?branch=develop)](https://travis-ci.org/andela-amwaleh/Bookkeeper)
 A simple Search engine that allows you to search by book title or
 category
 

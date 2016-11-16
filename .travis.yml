@@ -10,4 +10,5 @@ branches:
   only:
   - develop
 
-after_success: coveralls
+after_success:
+    - coveralls
