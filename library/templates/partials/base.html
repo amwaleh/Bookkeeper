@@ -10,25 +10,21 @@
 	<title>Document</title>
 </head>
 <body>
-        <ul class="nav nav-pills nav-dark">
+<div style="background-color:#333;padding:30px">
+        <ul class="nav nav-pills  style="background-color:#333">
 			<li class="nav-item">
-				<a href="#" class="nav-link active">Active</a>
+				<a href="#" class="nav-link active"> Book Keeper</a>
 			</li>
-			<li class="nav-item">
-				<a href="#" class="nav-link">Active</a>
-			</li>
-			<li class="nav-item">
-				<a href="#" class="nav-link">Active</a>
-			</li>
-			<li class="nav-item">
-				<a href="#" class="nav-link disabled">Disabled</a>
-			</li>
+
 		</ul>
+</div>
 <div class="container">
 <div class="jumbotron">
-<form action="">
-	
-	<!-- search form  -->
+<form action="{% url 'library:search' %}">
+	{% csrf_token %}
+	{% bootstrap_form search_form %}
+
+    {% bootstrap_button button_type="submit" content="search" button_class="pull-right primary" icon="search" %}
 </form>
 	
 </div>

@@ -3,5 +3,6 @@ from . import views
 
 
 urlpatterns=[
-    url(r'',views.Home.as_view(), name="index")
+    url(r'^$',views.HomeView.as_view(), name='index'),
+    url(r'search/$',views.SearchView.as_view(),name='search')
 ]

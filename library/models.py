@@ -13,9 +13,9 @@ class Categories(Timemixin):
     '''
     name = models.CharField(max_length=32)
 
-    def get_absolute_url(self):
-    # Redirect to route on sucess
-        pass
+    def __str__(self):
+        return "{}".format(self.name)
+
 
 class Books(Timemixin):
     '''
@@ -23,3 +23,6 @@ class Books(Timemixin):
     '''
     title = models.CharField(max_length=32)
     category = models.ForeignKey(Categories,on_delete=models.CASCADE)
+
+
+

@@ -6,5 +6,28 @@
 <H1> welcome to the book store </H1>
 	
 </div>
+    <h2>results</h2>
+
+    <div class="col-lg-6">
+
+    
+    <table class="table table-stripped">
+    	<thead>
+    		<tr>
+    			<th>Title </th>
+    			<th>Category</th>
+    		</tr>
+    	</thead>
+    	<tbody>
+        {% for item in results %}
+    		<tr>
+    			<td>{{ item.title }}</td>
+    			<td>{{ item.category }}</td>
+    		</tr>
+        {% endfor %}
+    	</tbody>
+    </table>
+
+    </div>
 
 {% endblock content  %}
